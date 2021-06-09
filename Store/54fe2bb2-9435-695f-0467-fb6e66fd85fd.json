@@ -1,0 +1,15 @@
+{
+    "reservoirTemperature": 350,
+    "formationCompressibility": 0.00004,  
+    "surfaceOilDensity": 0.850,
+    "residualOilSaturation": 0.11851,
+    "bubblePointPressure": 49.34615,
+    "bubblePointOilFvf": 1.1,
+    "bubblePointGasSaturation": 70,
+    "surfaceGasDensity": 1.65,
+    "waterFvf": 1,
+    "surfaceWaterDensity": 1,
+    "waterViscosity": 1.03,
+    "initialWaterSaturation": 0.20335,
+    "waterCompressibility": 0.00004
+}
