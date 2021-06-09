@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -24,12 +26,12 @@ public class FileStoreService implements IFileStoreService {
     IFileMetaProvider fileMetaProvider;
 
     @Override
-    public String storeFile(byte[] content, String fileName, int subFileType) throws IOException, NoSuchAlgorithmException {
+    public String storeFile(byte[] content, String fileName, int subFileType, String format, long size) throws IOException, NoSuchAlgorithmException {
         final UUID md5 = HashHelper.getMd5Hash(content);
 
         String filename = fileMetaProvider.checkFileExists(md5);
         if (filename == null) {
-            fileMetaProvider.saveFileMeta(md5, fileName, subFileType);
+            fileMetaProvider.saveFileMeta(md5, fileName, subFileType, format, size);
             filename = systemProvider.storeFile(content, md5, fileName);
         }
 
